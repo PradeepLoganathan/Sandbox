@@ -1,6 +1,6 @@
 ﻿using System;
 using Xunit;
-using Lists;
+using Datastructures.Lists;
 
 namespace Tests
 {
@@ -9,8 +9,14 @@ namespace Tests
         [Fact]
         public void Test1() 
         {
-            SLinkedList s = new SLinkedList();
-            Assert.Equal(10, s.add(3,2));
+            SLinkedList<int> slist = new SLinkedList<int>();
+            for(int i = 0; i <=10 ; i++)
+                slist.AddNode(i);
+
+            Console.WriteLine(slist.ToString());
+
+            Console.WriteLine("middle node is");
+            Console.WriteLine(slist.FindMid().Value.ToString());
         }
     }
 }
